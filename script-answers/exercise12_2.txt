@@ -1,0 +1,35 @@
+Script started on 2023-09-05 22:32:17+03:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="211" LINES="55"]
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/script-answers[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/script-answers[00m$ exitcat excercise12_2.txt lear[Kat excercise12_2.txt [1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kclearat exercise12_2.txt 1[C[C[C[C[Cls[Kgit statusrestore .[8Pclear[3Plsagit status[K[K[K[K[K[K[K[K[K[Kdocker do[K[Kcon
+config     container  context    
+]0;vaisajuh@avalon: ~/part12-containers-applications/script-answers[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/script-answers[00m$ docker container run hello-world
+[?2004l
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/script-answers[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/script-answers[00m$ docker run -t[Kit unu[K[K[Kbu[K[Kun[Kbuntu bash
+[?2004l[?2004h]0;root@1dfb53ce03f6: /root@1dfb53ce03f6:/# mkdir -p /usr/srcA /app
+[?2004l[?2004h]0;root@1dfb53ce03f6: /root@1dfb53ce03f6:/# touch /usr/src/app/d index.je s
+[?2004l[?2004h]0;root@1dfb53ce03f6: /root@1dfb53ce03f6:/# [Kexit
+[?2004lexit
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/script-answers[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/script-answers[00m$ exit
+[?2004lexit
+
+Script done on 2023-09-05 22:34:00+03:00 [COMMAND_EXIT_CODE="0"]
