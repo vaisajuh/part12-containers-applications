@@ -15,13 +15,31 @@ if (!REDIS_URL) {
 } else {
   const client = redis.createClient({
     url: REDIS_URL
-  })
-    
+  }
+  )
+
+  client.ping((err, reply) => {
+    if (err) {
+      console.error('Error pinging Redis:', err);
+    } else {
+      if (reply === 'PONG') {
+        console.log('Connected to Redis');
+      } else {
+        console.error('Failed to connect to Redis');
+      }
+    }
+  });
+
   getAsync = promisify(client.get).bind(client)
-  setAsync = promisify(client.set).bind(client)    
+  setAsync = promisify(client.set).bind(client)
+
+  let current = getAsync('key')
+  if (current == null) {
+    setAsync('key', 0)
+  }
 }
 
 module.exports = {
   getAsync,
-  setAsync
+  setAsync,
 }

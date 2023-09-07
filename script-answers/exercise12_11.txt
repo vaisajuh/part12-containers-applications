@@ -1,0 +1,597 @@
+Script started on 2023-09-07 20:38:18+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="211" LINES="55"]
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ exitdocker exec -it todo-backend-mongo-1 bashgit push[Kcommit -m "Exercises 6&7"push[Kcommit -m "Exercises 6&7"status[Kcd part12-containers-applications/git status[Kcommit -m "Exercises 6&7"push[Kdocker exec -it todo-backend-mongo-1 bashexit[K[Kexitdocker exec -it todo-backend-mongo-1 bashexit[K[K[K[K[Kco[K[Kdocker container -[Kls
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED        STATUS       PORTS                                         NAMES
+d6d793523c7f   redis     "docker-entrypoint.s…"   2 hours ago    Up 2 hours   0.0.0.0:6378->6379/tcp, :::6378->6379/tcp     todo-backend-redis-1
+3cda85481d40   mongo     "docker-entrypoint.s…"   23 hours ago   Up 2 hours   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker container lsexit[Kdocker exec -it todo-backend-mongo-1 bashgit push[Kdocker exec -it todo-backend-mongo-1 bash[C[1P bash[1P bash[1P bash[1P bash[1P bash[1P bash[1P bashr bashe bashdis-1 bash
+[?2004l[?2004hroot@d6d793523c7f:/data# reds is-l cli
+[?2004l127.0.0.1:6379> [0K127.0.0.1:6379> ACL[19C[0K127.0.0.1:6379> ACLk[20C[0K127.0.0.1:6379> ACLke[21C[0K127.0.0.1:6379> ACLkey[22C[0K127.0.0.1:6379> ACLkeys[23C[0K127.0.0.1:6379> ACLkey[22C[0K127.0.0.1:6379> ACLke[21C[0K127.0.0.1:6379> ACLk[20C[0K127.0.0.1:6379> ACL[19C[0K127.0.0.1:6379> AC[18C[0K127.0.0.1:6379> A[17C[0K127.0.0.1:6379> [16C[0K127.0.0.1:6379> K[17C[0K127.0.0.1:6379> KE[18C[0K127.0.0.1:6379> KEY[19C[0K127.0.0.1:6379> KEYS[20C[0K127.0.0.1:6379> KEYS [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> KEYS *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> KEYS *[22C
+1) "myKey"
+2) "key"
+127.0.0.1:6379> [0K127.0.0.1:6379> G[17C[0K127.0.0.1:6379> GE[18C[0K127.0.0.1:6379> GET[19C[0K127.0.0.1:6379> GET [0;90;49mkey[0m[20C[0K127.0.0.1:6379> GET K[0;90;49m key[0m[21C[0K127.0.0.1:6379> GET KE[0;90;49m key[0m[22C[0K127.0.0.1:6379> GET K[0;90;49m key[0m[21C[0K127.0.0.1:6379> GET [0;90;49mkey[0m[20C[0K127.0.0.1:6379> GET k[0;90;49m key[0m[21C[0K127.0.0.1:6379> GET ke[0;90;49m key[0m[22C[0K127.0.0.1:6379> GET ket[0;90;49m key[0m[23C[0K127.0.0.1:6379> GET ke[0;90;49m key[0m[22C[0K127.0.0.1:6379> GET key[0;90;49m key[0m[23C[0K127.0.0.1:6379> GET key[23C
+"9"
+127.0.0.1:6379> [0K127.0.0.1:6379> S[17C[0K127.0.0.1:6379> SE[18C[0K127.0.0.1:6379> SET[19C[0K127.0.0.1:6379> SET [0;90;49mkey value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[20C[0K127.0.0.1:6379> SET k[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[21C[0K127.0.0.1:6379> SET ke[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[22C[0K127.0.0.1:6379> SET key[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[23C[0K127.0.0.1:6379> SET key [0;90;49mvalue [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[24C[0K127.0.0.1:6379> SET key 9[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[25C[0K127.0.0.1:6379> SET key 90[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[26C[0K127.0.0.1:6379> SET key 900[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[27C[0K127.0.0.1:6379> SET key 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[28C[0K127.0.0.1:6379> SET key 9001[28C
+OK
+127.0.0.1:6379> [0K127.0.0.1:6379> SET key 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[28C[0K127.0.0.1:6379> GET key[0;90;49m key[0m[23C[0K127.0.0.1:6379> GET key[23C
+"9001"
+127.0.0.1:6379> [0K127.0.0.1:6379> D[17C[0K127.0.0.1:6379> DE[18C[0K127.0.0.1:6379> DEL[19C[0K127.0.0.1:6379> DEL [0;90;49mkey [key ...][0m[20C[0K127.0.0.1:6379> DEL k[0;90;49m key [key ...][0m[21C[0K127.0.0.1:6379> DEL ke[0;90;49m key [key ...][0m[22C[0K127.0.0.1:6379> DEL key[0;90;49m key [key ...][0m[23C[0K127.0.0.1:6379> DEL key[23C
+(integer) 1
+127.0.0.1:6379> [0K127.0.0.1:6379> DEL key[0;90;49m key [key ...][0m[23C[0K127.0.0.1:6379> GET key[0;90;49m key[0m[23C[0K127.0.0.1:6379> SET key 9001[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m[28C[0K127.0.0.1:6379> GET key[0;90;49m key[0m[23C[0K127.0.0.1:6379> KEYS *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> KEYS *[22C
+1) "myKey"
+127.0.0.1:6379> 
+[?2004hroot@d6d793523c7f:/data# ^C[?2004l[?2004h[?2004l
+[?2004hroot@d6d793523c7f:/data# exit
+[?2004lexit
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ ls
+[?2004lapp.js  [0m[01;34mbin[0m  docker-compose.dev.yml  docker-compose.yml  Dockerfile  [01;34mmongo[0m  [01;34mmongo_data[0m  [01;34mnode_modules[0m  package.json  package-lock.json  README.md  [01;34mredis[0m  [01;34mroutes[0m  typescript  [01;34mutil[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ mc[Kv typescript ../../script-answers/[7mexercise12_11.txt[27mexercise12_11.txt
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$  cd..
+[?2004lcd..: command not found
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   script-answers/exercise12_8.txt[m
+	[31mmodified:   todo-app/todo-backend/.gitignore[m
+	[31mmodified:   todo-app/todo-backend/app.js[m
+	[31mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[31mmodified:   todo-app/todo-backend/redis/index.js[m
+	[31mmodified:   todo-app/todo-backend/routes/index.js[m
+	[31mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mscript-answers/exercise12_11.txt[m
+	[31mtodo-app/todo-backend/redis_data/[m
+	[31mtodo-app/todo-backend/routes/statistics.js[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ ls -a
+[?2004l[0m[01;34m.[0m  [01;34m..[0m  [01;34m.git[0m  [01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ cd .[K[K[K[Kcd todo-app/[K[K[K[Kback[K[K[K[K[K[K[K[K[K[K[K[Kcd todo-app/
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ ls
+[?2004l[0m[01;34mtodo-backend[0m  [01;34mtodo-frontend[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ cd bac[K[K[K[Kto[K[K todo-backend/
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ ls
+[?2004lapp.js  [0m[01;34mbin[0m  docker-compose.dev.yml  docker-compose.yml  Dockerfile  [01;34mmongo[0m  [01;34mmongo_data[0m  [01;34mnode_modules[0m  package.json  package-lock.json  README.md  [01;34mredis[0m  [01;34mredis_data[0m  [01;34mroutes[0m  [01;34mutil[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ ls -a
+[?2004l[0m[01;34m.[0m   app.js  docker-compose.dev.yml  Dockerfile     .gitignore  [01;34mmongo_data[0m    package.json       README.md  [01;34mredis_data[0m  [01;34mutil[0m
+[01;34m..[0m  [01;34mbin[0m     docker-compose.yml      .dockerignore  [01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m      [01;34mroutes[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ nan[K[K[Kgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../../script-answers/exercise12_8.txt[m
+	[31mmodified:   .gitignore[m
+	[31mmodified:   app.js[m
+	[31mmodified:   docker-compose.dev.yml[m
+	[31mmodified:   redis/index.js[m
+	[31mmodified:   routes/index.js[m
+	[31mmodified:   routes/todos.js[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../../script-answers/exercise12_11.txt[m
+	[31mredis_data/[m
+	[31mroutes/statistics.js[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ a[Knano c[K[K[K[K[K[Kgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../../script-answers/exercise12_8.txt[m
+	[31mmodified:   .gitignore[m
+	[31mmodified:   app.js[m
+	[31mmodified:   docker-compose.dev.yml[m
+	[31mmodified:   redis/index.js[m
+	[31mmodified:   routes/index.js[m
+	[31mmodified:   routes/todos.js[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../../script-answers/exercise12_11.txt[m
+	[31mroutes/statistics.js[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ git add .
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ git commit - m[K[Km "ex[K[K89101112[K[K[K[K[K[K[K[K8[K[K"E[Kxer[K[K[KExr[Kercises 8&9!0[K[K10&11[K[K[K[K[K[K[K_9_10_1[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K8_19_10_11_!2[K[K12"[K[K[K[K[K[K[K[K[K[K[K[K[K&&[K9&10&11![K&12"[C[1P12"[1P1112"[1P101112"[1P9101112"_9101112"[C[C_101112"[C[C[C_1112"[C[C_12"
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: Error building trees
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ ls .a
+[?2004lls: cannot access '.a': No such file or directory
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ lks[K[Ks -a
+[?2004l[0m[01;34m.[0m   app.js  docker-compose.dev.yml  Dockerfile     .gitignore  [01;34mmongo_data[0m    package.json       README.md  [01;34mredis_data[0m  [01;34mutil[0m
+[01;34m..[0m  [01;34mbin[0m     docker-compose.yml      .dockerignore  [01;34mmongo[0m       [01;34mnode_modules[0m  package-lock.json  [01;34mredis[0m      [01;34mroutes[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$  cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ ls[K[Kgiot [K[K[Kt tat[K[K[Kstatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mscript-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ got add -[K.
+[?2004lCommand 'got' not found, but there are 17 similar ones.
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ gi[K[Kcd [K[K[Kls
+[?2004l[0m[01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ cd todo-app/
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ cd [K[K[Kgit add .
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git satuts[K[K[K[K[Ktatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ lscleargit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git status[5Pcleargit status[1Padd .
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git add .status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git add[K[K[K[K[K[K[Kgit add .
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ duso [K[K[K[K[Ksudo git [K add .
+[?2004l[sudo] password for vaisajuh: 
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ hgity[K[K[K[K[Kgit status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ cd ..[K[K[K[K[Kcd s[K[K[K[Klös[K[Ks
+[?2004l[0m[01;34mtodo-backend[0m  [01;34mtodo-frontend[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ cd [K[K[Kls
+[?2004l[0m[01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git sa[Ktatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   script-answers/exercise12_8.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mscript-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git add script-answers/[K/exercise12_.txt
+[?2004lfatal: pathspec 'script-answers/exercise12_.txt' did not match any files
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git add script-answers/exercise12_.txt1.txt1.txt
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git sat[K[Ktau[Ktus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   script-answers/exercise12_11.txt[m
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   script-answers/exercise12_8.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git dd[K[K[K[K[K[Kgit add .
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: script-answers/exercise12_8.txt: failed to insert into database
+error: unable to index file 'script-answers/exercise12_8.txt'
+fatal: updating files failed
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git add script-answers/exercise12_8.txt [K
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: script-answers/exercise12_8.txt: failed to insert into database
+error: unable to index file 'script-answers/exercise12_8.txt'
+fatal: updating files failed
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ sudo [K fit[K[K[Kgit add script-answers/exercise12_8.txt
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git a[Kstatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   script-answers/exercise12_11.txt[m
+	[32mmodified:   script-answers/exercise12_8.txt[m
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git commit -m
+[?2004lerror: switch `m' requires a value
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git commit -m " [K[K8_[K[K"8_9_10_12[K1_:[K12"
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: Error building trees
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git commit -m "8_9_10_11_12"[1@s[1@u[1P[1P[Kcd[K[Kls[K[Kls [K[K[Kls -l objects
+[?2004lls: cannot access 'objects': No such file or directory
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ ls -l objects[C[1Pts[1Pts[1Pts[1Pts[1Pts[C[1Ps[C[K[K[K[K[K[K[Kls
+[?2004l[0m[01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ ls -a
+[?2004l[0m[01;34m.[0m  [01;34m..[0m  [01;34m.git[0m  [01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ cd .git
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/.git[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/.git[00m$ cd .git[2Pls -a[K -l objects
+[?2004ltotal 448
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [0m[01;34m02[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34m04[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 13:47 [01;34m05[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m08[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m0d[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m0f[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:30 [01;34m10[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m11[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:42 [01;34m13[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m14[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m16[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:29 [01;34m18[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 23:45 [01;34m19[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34m1b[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m22[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:53 [01;34m23[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m27[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34m28[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m29[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34m2d[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34m2f[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m31[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m32[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 13:47 [01;34m37[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m3b[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m3c[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m3d[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m3e[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m3f[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 20:03 [01;34m41[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:53 [01;34m43[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m4d[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m54[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m58[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 20:03 [01;34m59[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34m5c[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m60[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m64[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:30 [01;34m66[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m67[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m68[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m6a[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m6b[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m6c[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m6e[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:38 [01;34m71[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:29 [01;34m74[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:07 [01;34m75[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m76[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:43 [01;34m7b[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:07 [01;34m7e[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m82[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:07 [01;34m85[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:30 [01;34m86[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m8a[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34m8b[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m8c[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:38 [01;34m8d[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 23:45 [01;34m8e[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m8f[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m90[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 20:03 [01;34m96[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34m9c[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34m9e[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34ma1[0m
+drwxr-xr-x 2 root     root     4096 syys    7 21:20 [01;34ma2[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:29 [01;34ma3[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34ma4[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:46 [01;34ma7[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34maa[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mac[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mae[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:43 [01;34mb5[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34mb8[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:53 [01;34mb9[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mba[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34mbb[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34mc0[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:38 [01;34mc1[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mc2[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:30 [01;34mc8[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 19:30 [01;34mcf[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34md0[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:40 [01;34md1[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 01:45 [01;34md3[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34md5[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34md7[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mdb[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 13:47 [01;34mdc[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34mdd[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:07 [01;34mde[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34me0[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:14 [01;34me1[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34me2[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34me3[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34me4[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34me5[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34me6[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34me9[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:20 [01;34mea[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34meb[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mec[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    6 20:03 [01;34med[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mef[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 22:43 [01;34mf0[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 13:47 [01;34mf3[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:41 [01;34mf5[0m
+drwxr-xr-x 2 root     root     4096 syys    7 01:40 [01;34mf6[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    7 21:19 [01;34mf7[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:40 [01;34mfc[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:31 [01;34minfo[0m
+drwxrwxr-x 2 vaisajuh vaisajuh 4096 syys    5 21:31 [01;34mpack[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/.git[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/.git[00m$ cd ..
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git sat[K[Ktatus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   script-answers/exercise12_11.txt[m
+	[32mmodified:   script-answers/exercise12_8.txt[m
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git add .[Kscript-answers/exercise12_11.txt 
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   script-answers/exercise12_11.txt[m
+	[32mmodified:   script-answers/exercise12_8.txt[m
+	[32mmodified:   todo-app/todo-backend/.gitignore[m
+	[32mmodified:   todo-app/todo-backend/app.js[m
+	[32mmodified:   todo-app/todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-app/todo-backend/redis/index.js[m
+	[32mmodified:   todo-app/todo-backend/routes/index.js[m
+	[32mnew file:   todo-app/todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-app/todo-backend/routes/todos.js[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ git [K[K[K[Kgit statusadd script-answers/exercise12_11.txt status[K[5Pcd ..ls -l objects[6Pcd .git[2Pls -a[K -l objectsgit commit -m "8_9_10_11_12"[K"
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: Error building trees
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ siu[Kgit commit -m "8_9_10_11_12"[1@s[1@u[1@d[1@o[1@ 
+[?2004lAuthor identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@avalon.(none)')
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ sudo git commit -m "8_9_10_11_12"
+[?2004lAuthor identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@avalon.(none)')
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ clearsudo git commit -m "8_9_10_11_12"clear[K[Kls
+[?2004l[0m[01;34mscript-answers[0m  [01;34mtodo-app[0m
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications[00m$ cd todo-app/
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git sat[K[Ktatu[Kus
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   ../script-answers/exercise12_11.txt[m
+	[32mmodified:   ../script-answers/exercise12_8.txt[m
+	[32mmodified:   todo-backend/.gitignore[m
+	[32mmodified:   todo-backend/app.js[m
+	[32mmodified:   todo-backend/docker-compose.dev.yml[m
+	[32mmodified:   todo-backend/redis/index.js[m
+	[32mmodified:   todo-backend/routes/index.js[m
+	[32mnew file:   todo-backend/routes/statistics.js[m
+	[32mmodified:   todo-backend/routes/todos.js[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   ../script-answers/exercise12_11.txt[m
+
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git add . s[K[K[Ks[K-..[K[K[K../script-answers/e[Kw[Kexercise12_11.txt 
+[?2004lerror: insufficient permission for adding an object to repository database .git/objects
+error: script-answers/exercise12_11.txt: failed to insert into database
+error: unable to index file 'script-answers/exercise12_11.txt'
+fatal: updating files failed
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app[00m$ git add ../script-answers/exercise12_11.txt [1@s[1@u[1@d[1@o[1@ 
+[?2004l[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app[01;32mvaisajuh@avalon[00m
