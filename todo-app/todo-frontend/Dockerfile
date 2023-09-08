@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:20
 
 ENV REACT_APP_BACKEND_URL=http://localhost:3000/
 
@@ -9,6 +9,8 @@ COPY . .
 RUN npm ci
 
 RUN  npm run build
+
+RUN CI=true npm test
 
 RUN npm install -g serve
 

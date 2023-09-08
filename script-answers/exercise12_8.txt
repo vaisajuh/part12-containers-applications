@@ -528,4 +528,27 @@ sudo apt install redis-tools
  [32m✔[0m Container todo-backend-mongo-1  [32mRunning[0m                                                                                                                                                                    [34m0.0s [0m
 [?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
  [32m✔[0m Container todo-backend-redis-1  [32mStarted[0m                                                                                                                                                                    [34m0.3s [0m
- [32m✔[0m Container todo-backend-mongo-1  [32mRunning[0m                                                                                                                                                                    [34m0
+ [32m✔[0m Container todo-backend-mongo-1  [32mRunning[0m                                                                                                                                                                    [34m0.0s [0m
+[?25h[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-compose.dev.yml up -d[4Pntainer stop todo-backend-redis-1
+[?2004ltodo-backend-redis-1
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker container stop todo-backend-redis-1[K[K[K[K[K[K[Kmongo-1 [K
+[?2004ltodo-backend-mongo-1
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker container stop todo-backend-mongo-1redis-1mpose -f docker-compose.dev.yml up -d
+[?2004l[33mWARN[0m[0000] Found orphan containers ([todo-backend-app-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
+[1A[1B[0G[?25l[+] Running 0/0
+ ⠿ Container todo-backend-redis-1  Starting                                                                                                                                                                   [34m0.1s [0m
+ ⠿ Container todo-backend-mongo-1  Starting                                                                                                                                                                   [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting                                                                                                                                                                   [34m0.2s [0m
+ ⠿ Container todo-backend-mongo-1  Starting                                                                                                                                                                   [34m0.2s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting                                                                                                                                                                   [34m0.3s [0m
+ ⠿ Container todo-backend-mongo-1  Starting                                                                                                                                                                   [34m0.3s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+ [32m✔[0m Container todo-backend-redis-1  [32mStarted[0m                                                                                                                                                                    [34m0.4s [0m
+ [32m✔[0m Container todo-backend-mongo-1  [32mStarted[0m                                                                                                                                                                    [34m0.4s [0m
+[?25h[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker compose -f docker-compose.dev.yml up -d[4Pntainer stop todo-backend-mongo-1redis-1mpose -f docker-compose.dev.yml up -d[4Pntainer stop todo-backend-redis-1
+[?2004ltodo-backend-redis-1
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[00m:[01;34m~/part12-containers-applications/todo-app/todo-backend[00m$ docker container stop todo-backend-redis-1[K[K[K[K[K[K[Kmongo-1 
+[?2004ltodo-backend-mongo-1
+[?2004h]0;vaisajuh@avalon: ~/part12-containers-applications/todo-app/todo-backend[01;32mvaisajuh@avalon[
