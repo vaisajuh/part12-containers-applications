@@ -33,10 +33,9 @@ if (!REDIS_URL) {
   getAsync = promisify(client.get).bind(client)
   setAsync = promisify(client.set).bind(client)
 
-  let current = getAsync('key')
-  if (current == null) {
-    setAsync('key', 0)
-  }
+
+  setAsync('key', 0)
+  
 }
 
 module.exports = {

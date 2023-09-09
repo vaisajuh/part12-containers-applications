@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
+  
   mongo:
     image: mongo
+    container_name: mongo
     ports:
       - 3456:27017
     environment:
@@ -12,11 +14,13 @@ services:
     volumes:
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - ./mongo_data:/data/db
+      - ./:/usr/src/app
   redis:
     image: redis
+    container_name: redis
     ports:
-      - 6378:6379
+      - 6379:6379
     command: ['redis-server', '--appendonly', 'yes']
     volumes:
-      - ./redis_data:/data
-    
+      - ./redis_data:/data    
+  
