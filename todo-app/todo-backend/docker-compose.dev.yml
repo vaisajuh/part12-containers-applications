@@ -26,8 +26,7 @@ services:
       - ./redis_data:/data    
   
   server:
-    image: todo-backend
-    container_name: todo-backend
+    container_name: todo-backend-dev
     build:
       context: .
       dockerfile: dev.Dockerfile 
@@ -39,5 +38,5 @@ services:
     depends_on:
       - mongo
       - redis
-  
+
     

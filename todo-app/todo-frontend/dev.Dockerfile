@@ -6,6 +6,12 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
+RUN npm ci
 
-CMD ["npm", "start"]
+RUN  npm run build
+
+RUN CI=true npm test
+
+RUN npm install -g serve
+
+CMD ["serve", "build"]
