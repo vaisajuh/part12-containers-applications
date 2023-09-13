@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  server:
+    container_name: server
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile 
+    ports:
+      - 3000:3000
+
+  json-server:
+    image: vimagick/json-server
+    command: -H 0.0.0.0 -p 3001 -w db.json
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/data
+  
+  app:
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 8080:3000
+    container_name: frontend
